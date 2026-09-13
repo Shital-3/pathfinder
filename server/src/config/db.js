@@ -1,11 +1,11 @@
 import "dotenv/config";
+
 import mysql from "mysql2/promise";
 
 const connectionUrl = process.env.DATABASE_URL || process.env.MYSQL_URL;
 
 const pool = connectionUrl
-  ? mysql.createPool({
-      uri: connectionUrl,
+  ? mysql.createPool(connectionUrl, {
       waitForConnections: true,
       connectionLimit: Number(process.env.DB_CONNECTION_LIMIT || 10),
       queueLimit: 0,
@@ -27,11 +27,15 @@ export async function checkDatabaseConnection() {
   try {
     connection = await pool.getConnection();
     await connection.ping();
+
     return { connected: true };
   } catch (error) {
     return {
       connected: false,
-      error: process.env.NODE_ENV === "production" ? undefined : error.message,
+      error:
+        process.env.NODE_ENV === "production"
+          ? undefined
+          : error.message,
     };
   } finally {
     connection?.release();
