@@ -1,0 +1,38 @@
+.pf-ai {
+  border-top: var(--border-thin);
+  padding: var(--space-7) 0;
+  margin-top: var(--space-7);
+}
+
+.pf-ai__eyebrow {
+  color: var(--color-green);
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-2);
+}
+
+.pf-ai h2, .pf-ai h3 { margin: 0 0 var(--space-2); font-family: var(--font-display); font-weight: 400; }
+.pf-ai h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.pf-ai h3 { font-size: 1.6rem; }
+.pf-ai__intro { color: var(--color-text-secondary); line-height: 1.65; max-width: 720px; margin-bottom: var(--space-5); }
+.pf-ai__form { display: grid; gap: var(--space-3); max-width: 760px; }
+.pf-ai textarea, .pf-ai input { width: 100%; box-sizing: border-box; border: var(--border-thin); background: var(--color-surface); color: var(--color-text-primary); border-radius: var(--radius-md); padding: var(--space-3); font: inherit; outline: none; }
+.pf-ai textarea:focus, .pf-ai input:focus { border-color: var(--color-green); }
+.pf-ai__form .btn { justify-self: start; }
+.pf-ai__error { color: var(--color-error); margin-top: var(--space-3); }
+.pf-ai__result { margin-top: var(--space-5); border-top: var(--border-thin); }
+.pf-ai__result-block { padding: var(--space-4) 0; border-bottom: var(--border-thin); }
+.pf-ai__result-block > span { color: var(--color-text-muted); font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; }
+.pf-ai__result-block p, .pf-ai__result-block li { color: var(--color-text-secondary); line-height: 1.7; }
+.pf-ai__result-block ul, .pf-ai__result-block ol { margin: var(--space-2) 0 0; padding-left: 1.2rem; }
+.pf-ai__similar-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); margin-top: var(--space-5); }
+.pf-ai__similar-card { display: block; padding: var(--space-5); border: var(--border-thin); color: inherit; text-decoration: none; background: var(--color-surface); transition: border-color var(--transition-fast), transform var(--transition-fast); }
+.pf-ai__similar-card:hover { border-color: var(--color-green); transform: translateY(-2px); }
+.pf-ai__similar-card > span { color: var(--color-green); font-family: var(--font-mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; }
+.pf-ai__similar-card h3 { margin-top: var(--space-3); font-size: 1.25rem; }
+.pf-ai__similar-card p { color: var(--color-text-secondary); line-height: 1.6; }
+.pf-ai__similar-card small { color: var(--color-text-muted); }
+
+@media (max-width: 760px) { .pf-ai__similar-grid { grid-template-columns: 1fr; } }

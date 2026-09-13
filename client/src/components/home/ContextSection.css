@@ -1,0 +1,68 @@
+.context {
+  background-color: var(--color-bg-alt, #f7f3ea); /* Matches dilemmas section background */
+}
+
+.context__text {
+  padding: var(--space-1) 0;
+}
+
+.context__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.context__text {
+  padding: var(--space-1) 0;
+}
+
+
+
+.context__heading {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.7rem);
+  margin-bottom: var(--space-5);
+}
+
+.context__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.context__item {
+  padding: var(--space-4);
+  border: var(--border-thin);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.context__item dt {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.context__item dd {
+  color: var(--color-text-secondary);
+  font-size: 0.92rem;
+}
+
+.context__image {
+  aspect-ratio: 4 / 3;
+  background: var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.context__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .context__grid {
+    grid-template-columns: 1fr;
+  }
+}

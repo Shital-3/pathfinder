@@ -1,0 +1,73 @@
+@media (max-width: 860px) {
+  .dilemma-inline-context,
+  .dilemma-inline-experiences,
+  .dilemma-inline-related {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .dilemma-inline-container,
+  .dilemma-inline-banner-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .dilemma-inline-container {
+    padding-top: 28px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .dilemma-inline-context {
+    gap: 32px !important;
+    margin-bottom: 40px !important;
+  }
+
+  .dilemma-inline-table {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dilemma-inline-table table {
+    min-width: 560px;
+  }
+
+  .dilemma-inline-experiences,
+  .dilemma-inline-related {
+    gap: 16px !important;
+  }
+
+  .dilemma-inline-wisdom {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+  }
+
+  .dilemma-inline-wisdom h2 {
+    margin-bottom: 28px !important;
+  }
+
+  .dilemma-inline-wisdom .dilemma-inline-banner-inner {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .dilemma-inline-container,
+  .dilemma-inline-banner-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .dilemma-inline-container h1 {
+    font-size: clamp(2.25rem, 12vw, 3rem) !important;
+  }
+
+  .dilemma-inline-context p {
+    font-size: 1rem !important;
+  }
+
+  .dilemma-inline-wisdom .dilemma-inline-wisdom,
+  .dilemma-inline-wisdom p {
+    overflow-wrap: anywhere;
+  }
+}

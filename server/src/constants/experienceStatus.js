@@ -1,0 +1,5 @@
+export const EXPERIENCE_STATUS = Object.freeze({
+  PENDING: "PENDING",
+  PUBLISHED: "PUBLISHED",
+  REJECTED: "REJECTED",
+});

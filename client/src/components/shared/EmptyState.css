@@ -1,0 +1,29 @@
+.empty-state {
+  text-align: center;
+  padding: var(--space-9) var(--space-5);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.empty-state h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-2);
+}
+
+.empty-state p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.empty-state__action {
+  padding: 10px 18px;
+  border: var(--border-thin);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.empty-state__action:hover {
+  border-color: var(--color-green);
+  color: var(--color-green);
+}

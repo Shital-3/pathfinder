@@ -1,0 +1,210 @@
+.contributor-detail {
+  padding: 0 0 var(--space-10);
+  background: #faf9f6;
+  color: var(--color-text-primary);
+}
+
+.contributor-detail__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 0 var(--space-5);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.contributor-detail__breadcrumb a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+}
+
+.contributor-detail__breadcrumb a:hover {
+  color: var(--color-green);
+}
+
+.contributor-detail__profile {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 220px;
+  gap: var(--space-5);
+  align-items: start;
+  padding: 48px 0 50px;
+  border-bottom: var(--border-thin);
+}
+
+.contributor-detail__avatar {
+  width: 88px;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: #2d5945;
+  color: #fff;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.contributor-detail__identity h1 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.7rem);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+
+.contributor-detail__identity .verified-badge {
+  flex: 0 0 auto;
+}
+
+.contributor-detail__role {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin-bottom: var(--space-4);
+}
+
+.contributor-detail__bio {
+  max-width: 640px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 18px 0 16px;
+}
+
+.contributor-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.contributor-detail__tags span {
+  padding: 3px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contributor-detail__facts {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.contributor-detail__facts div {
+  padding: 0 0 12px 12px;
+  margin-bottom: 12px;
+  border-left: 2px solid #2d5945;
+}
+
+.contributor-detail__facts div:nth-child(2) {
+  border-left-color: #c85b3f;
+}
+
+.contributor-detail__facts div:nth-child(3) {
+  border-left-color: var(--color-border);
+}
+
+.contributor-detail__facts dt {
+  margin-bottom: 4px;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contributor-detail__facts dd {
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.contributor-detail__experiences {
+  padding-top: 48px;
+}
+
+.contributor-detail__count {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding-top: 6px;
+  border-top: 1px solid var(--color-text-primary);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contributor-detail__experience-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 505px);
+  gap: var(--space-5);
+}
+
+.contributor-detail__experience-grid .exp-card {
+  border-radius: 0;
+  padding: 24px;
+  background: #fff;
+  box-shadow: none;
+}
+
+.contributor-detail__empty,
+.contributor-detail__not-found p:not(.contributor-detail__eyebrow) {
+  color: var(--color-text-secondary);
+}
+
+.contributor-detail__not-found {
+  max-width: 560px;
+  padding: var(--space-10) 0;
+}
+
+.contributor-detail__not-found h1 {
+  margin: var(--space-3) 0;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.contributor-detail__not-found p:not(.contributor-detail__eyebrow) {
+  margin-bottom: var(--space-5);
+}
+
+.contributor-detail__eyebrow {
+  color: var(--color-green);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .contributor-detail__profile {
+    grid-template-columns: 1fr;
+    padding-top: 32px;
+  }
+
+  .contributor-detail__facts {
+    margin-top: var(--space-3);
+  }
+
+  .contributor-detail__experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contributor-detail__identity h1 {
+    font-size: clamp(2.35rem, 12vw, 3.4rem);
+  }
+
+  .contributor-detail__facts div {
+    max-width: 280px;
+  }
+}

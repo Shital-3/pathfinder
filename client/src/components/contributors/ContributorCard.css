@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Contributor Card
+   ========================================================================== */
+
+.contrib-card {
+  color: inherit;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.75rem;
+  border: 1px solid rgba(31, 36, 33, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 7rem; /* Added top margin to space out cards from elements above */
+}
+
+.contrib-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+}
+
+/* Top Bar: Dark Green Initials Avatar & Arrow */
+.contrib-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.contrib-card__avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #1a382b;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.05em;
+}
+
+.contrib-card__arrow {
+  color: #707571;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contrib-card:hover .contrib-card__arrow {
+  transform: translate(2px, -2px);
+  color: #1a382b;
+}
+
+/* Typography Details */
+.contrib-card__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2421;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+  border: 1.5px solid #707571;
+  color: #707571;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.contrib-card__role {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #707571;
+  margin-bottom: 1.25rem;
+}
+
+.contrib-card__bio {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #4a504c;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Tag Pills */
+.contrib-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag-box {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #4a504c;
+  background-color: #f2eee5;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Card Footer */
+.contrib-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(31, 36, 33, 0.08);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #8c918d;
+}

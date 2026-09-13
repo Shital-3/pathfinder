@@ -1,0 +1,23 @@
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.img-zoom-wrap {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.img-zoom-wrap img {
+  transition: transform 400ms var(--ease);
+}
+
+.img-zoom-wrap:hover img {
+  transform: scale(1.03);
+}

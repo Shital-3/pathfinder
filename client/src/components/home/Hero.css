@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+
+
+.hero {
+  /* Reduced top padding to 1.5rem while keeping side and bottom spacing intact */
+  padding: 1.5rem 0 clamp(3.5rem, 6vw, 5.5rem) 0;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  align-items: center;
+}
+
+.hero__content {
+  max-width: 620px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #1a382b;
+  background-color: rgba(26, 56, 43, 0.08);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  margin-bottom: 1.25rem;
+}
+
+.hero__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #1a382b;
+}
+
+/* ==========================================================================
+   Sequential Start-to-End Looping Headline Animation
+   ========================================================================== */
+
+.hero__headline {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 4vw + 1rem, 4.2rem);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: #1f2421;
+}
+
+/* Base keyframe loop applied to all words */
+.hero__word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: startToEndLoop 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Sequential Stagger: Word 1 starts instantly, followed by each word */
+.hero__word--1 { animation-delay: 0s; }
+.hero__word--2 { animation-delay: 0.22s; }
+.hero__word--3 { animation-delay: 0.44s; }
+.hero__word--4 { animation-delay: 0.66s; }
+.hero__word--5 { animation-delay: 0.88s; }
+.hero__word--6 { animation-delay: 1.10s; }
+
+.hero__em {
+  font-style: italic;
+  font-weight: 600;
+  color: #1a382b;
+  position: relative;
+  display: inline-block;
+  padding: 0 0.05em;
+}
+
+/* Underline syncs with word 4 ("before") */
+.hero__em::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1a382b 0%, rgba(26, 56, 43, 0.35) 100%);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: underlineLoop 5.5s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+  animation-delay: 0.66s;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Visual Card Styles */
+.hero__visual {
+  position: relative;
+}
+
+.hero__card {
+  background: #ffffff;
+  border: 1px solid rgba(31, 36, 33, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.hero__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 55px -15px rgba(26, 56, 43, 0.22);
+}
+
+.hero__image {
+  margin: 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 11;
+  background: #111;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Start-to-End Keyframes: Fade in, hold full sentence, fade out, repeat */
+@keyframes startToEndLoop {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  85%, 100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes underlineLoop {
+  0% {
+    transform: scaleX(0);
+  }
+  15% {
+    transform: scaleX(1);
+  }
+  75% {
+    transform: scaleX(1);
+  }
+  85%, 100% {
+    transform: scaleX(0);
+  }
+}
+
+.hero__animate-fade {
+  opacity: 0;
+  animation: heroFade 0.6s ease forwards 0.05s;
+}
+
+.hero__animate-fade-delayed {
+  opacity: 0;
+  animation: heroFade 0.7s ease forwards 0.6s;
+}
+
+.hero__animate-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+  animation: heroScaleIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.3s;
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes heroScaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
+  }
+
+  .hero__ctas {
+    flex-direction: column;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .hero__headline {
+    font-size: clamp(2.35rem, 12vw, 3.2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__card {
+    border-radius: 10px;
+  }
+}

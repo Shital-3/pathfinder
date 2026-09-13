@@ -1,0 +1,387 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --bg-main: #F7F5F0;           /* Soft warm linen */
+  --bg-card: #FFFFFF;           /* Crisp white for elevated elements */
+  --bg-hover: #FAF8F5;          /* Subtle hover tint */
+  
+  --text-primary: #1A1D1A;      /* Deep slate / near-black */
+  --text-secondary: #5A5E5B;    /* Muted charcoal */
+  --text-tertiary: #8A8E8B;     /* Light metadata gray */
+  
+  --accent-green: #2C4A3E;      /* Deep forest green */
+  --accent-green-hover: #1E3A2B;
+  --accent-pill-bg: #EAE6DF;    /* Tag pill background */
+  
+  --border-light: #E5E2DC;      /* Neutral structural borders */
+  --border-card: #ECE9E3;
+  
+  /* Typography */
+  --font-serif: 'Instrument Serif', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif;
+  
+  /* Layout & Spacing */
+  --max-width: 900px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Container */
+.detail-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+/* Section Separator */
+.section-divider {
+  border: 0;
+  height: 1px;
+  background-color: var(--border-light);
+  margin: 48px 0;
+}
+
+/* ==========================================================================
+   2. HERO HEADER SECTION
+   ========================================================================== */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+
+.breadcrumbs a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.breadcrumbs a:hover {
+  color: var(--text-primary);
+}
+
+.dilemma-meta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.badge-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-green);
+}
+
+.experience-count {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.dilemma-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.dilemma-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-bottom: 24px;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-pill {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  background-color: var(--accent-pill-bg);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.tag-pill:hover {
+  background-color: var(--text-primary);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   3. COMMUNITY DISTRIBUTION BAR
+   ========================================================================== */
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 4px;
+}
+
+.section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.distribution-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.distribution-labels {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.progress-track {
+  height: 12px;
+  width: 100%;
+  background-color: #E2DFD8;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  display: flex;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--accent-green);
+  transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.distribution-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+}
+
+/* ==========================================================================
+   4. TRADE-OFF MATRIX (COMPARISON TABLE)
+   ========================================================================== */
+.table-wrapper {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tradeoff-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.tradeoff-table th {
+  background-color: #FAF8F5;
+  padding: 16px 20px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tradeoff-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-primary);
+}
+
+.tradeoff-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tradeoff-table td:first-child {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Highlight badge inside matrix */
+.value-high { color: #1E6B3C; font-weight: 600; }
+.value-med  { color: #C27D00; font-weight: 600; }
+.value-low  { color: #A83232; font-weight: 600; }
+
+/* ==========================================================================
+   5. REAL EXPERIENCES CARD GRID
+   ========================================================================== */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.experience-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.experience-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: #D6D2C9;
+}
+
+.card-choice-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  width: fit-content;
+}
+
+.choice-option-a {
+  background-color: #E8F0EC;
+  color: var(--accent-green);
+}
+
+.choice-option-b {
+  background-color: #F3EFE6;
+  color: #7A5C29;
+}
+
+.card-quote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.card-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 16px;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.author-role {
+  background: var(--bg-main);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   6. BOTTOM CALL TO ACTION
+   ========================================================================== */
+.cta-block {
+  text-align: center;
+  padding: 48px 24px;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  margin-top: 40px;
+}
+
+.cta-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-green);
+  color: #FFFFFF;
+  padding: 12px 32px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-green-hover);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 640px) {
+  .detail-container {
+    padding: 24px 16px 48px;
+  }
+  
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .tradeoff-table th, 
+  .tradeoff-table td {
+    padding: 12px 14px;
+    font-size: 0.825rem;
+  }
+}

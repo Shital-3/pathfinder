@@ -1,0 +1,120 @@
+.featured {
+  padding: 4rem 0;
+}
+
+.featured__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.featured__title-area {
+  max-width: 640px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.725rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666056;
+  margin-bottom: 0.5rem;
+}
+
+.featured__heading {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.5rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.featured__subheading {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #5c564f;
+  margin: 0;
+}
+
+/* Continuous Auto-Scroll Track */
+.featured__scroll-container {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  padding: 0.5rem 0 1.5rem 0;
+  -webkit-overflow-scrolling: touch;
+  
+  /* Hide scrollbars cleanly across browsers */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.featured__scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.featured__scroll-item {
+  flex: 0 0 380px;
+}
+
+.featured__scroll-item > * {
+  height: 100%;
+}
+
+/* Styled Action Link */
+.featured__viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0b2b26;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.featured__viewall .arrow {
+  transition: transform 0.2s ease;
+}
+
+.featured__viewall:hover .arrow {
+  transform: translateX(4px);
+}
+
+.desktop-only {
+  display: inline-flex;
+}
+
+.mobile-only {
+  display: none;
+  margin-top: 1.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .featured__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .featured__scroll-item {
+    flex: 0 0 85vw;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline-flex;
+  }
+}

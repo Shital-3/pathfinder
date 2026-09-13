@@ -1,0 +1,108 @@
+:root {
+  --stats-bg: rgba(255, 255, 255, 0.45);
+  --stats-border: #E8E2D9;
+  --stats-text-primary: #1A1A1A;
+  --stats-text-muted: #666056;
+  --stats-accent: #0B2B26; /* Matches your green primary buttons */
+  --stats-icon-bg: #EAE6DF;
+}
+
+.stats {
+  border-top: 1px solid var(--stats-border);
+  border-bottom: 1px solid var(--stats-border);
+  background: var(--stats-bg);
+  backdrop-filter: blur(8px);
+  padding: 1.75rem 0;
+  width: 100%;
+}
+
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.stats__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+/* Vertical divider matching your cream theme */
+.stats__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: -0.75rem;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: var(--stats-border);
+}
+
+.stats__icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: var(--stats-icon-bg);
+  border: 1px solid var(--stats-border);
+  color: var(--stats-accent);
+  flex-shrink: 0;
+}
+
+.stats__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stats__value {
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif; /* Matches your serif headings */
+  font-size: clamp(1.6rem, 1.2vw + 1rem, 2.2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--stats-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.stats__label {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.725rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stats-text-muted);
+  white-space: nowrap;
+}
+
+/* Responsive Support */
+@media (max-width: 900px) {
+  .stats__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  
+  .stats__item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .stats__grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .stats__item {
+    padding: 0;
+  }
+
+  .stats__label {
+    white-space: normal;
+  }
+}
