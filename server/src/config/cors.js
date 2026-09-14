@@ -1,20 +1,21 @@
-import cors from "cors";
-
 const allowedOrigins = [
-  process.env.CLIENT_URL,
-  "https://pathfinder-murex-seven.vercel.app",
-  "https://pathfinder-fonxd4zxx-shital-3s-projects.vercel.app",
-  "http://localhost:5173",
-  "http://localhost:5174",
+    "http://localhost:5173",
+    "http://localhost:5174",
+
+    // Vercel production frontend
+    "https://pathfinder-murex-seven.vercel.app",
+
+    // Vercel preview/project deployment
+    "https://pathfinder-l3x76extu-shital-3s-projects.vercel.app",
 ].filter(Boolean);
 
 export default cors({
-  origin(origin, callback) {
-    if (!origin || allowedOrigins.includes(origin)) {
-      return callback(null, true);
-    }
+    origin(origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
 
-    return callback(new Error("Origin is not allowed by CORS"));
-  },
-  credentials: true,
+        return callback(new Error("Origin is not allowed by CORS"));
+    },
+    credentials: true,
 });
